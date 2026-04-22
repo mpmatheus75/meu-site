@@ -4,17 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
-    
-    <title>Primeiro site</title>
+    <title>Planner Dashboard - MVP</title>
 </head>
 <body>
-    <h1>Meu primeiro Site</h1>
-    <script src="script.js"></script>
-     
-    <H1>Introdução</H1>
-    <p>Este capítulo apresenta o JavaScript e discute alguns de seus conceitos fundamentais.</p>
-    <h2>O que você realmente já deveria saber?</h2>
+    <div class="app">
+        <aside class="sidebar">
+            <h1 class="logo">Meu Planner</h1>
+            <nav>
+                <button class="nav-btn active" data-view="today">Hoje</button>
+                <button class="nav-btn" data-view="week">Semana</button>
+                <button class="nav-btn" data-view="month">Mês</button>
+                <button class="nav-btn" data-view="all">Todas</button>
+            </nav>
+            <div class="sidebar-footer">
+                <small>Iniciante • Local</small>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="main-header">
+                <h2 id="view-title">Hoje</h2>
+                <div class="header-actions">
+                    <button id="add-task-btn">Nova tarefa</button>
+                </div>
+            </header>
+            <section class="content">
+                <div class="task-input hidden" id="task-form">
+                    <input id="task-title" type="text" placeholder="Titulo da tarefa"/>
+                    <input id="task-date" type="date"/>
+                    <select id="task-priority">
+                        <option value="low">Baixa</option>
+                        <option value="medium">Médio</option>
+                        <option value="high">Alta</option>
+                    </select>
+                    <div class="form-actions">
+                        <button id="save-task">Salvar</button>
+                        <button id="cancel-task" class="secondary">Cancelar</button>
+                    </div>
+
+                </div>
+              <ul class="task-list" id="task-list"></ul>
+            </section>
+
+        </main>
+
+    </div>
+    <script src="app.js"></script>
     
 
 </body>
